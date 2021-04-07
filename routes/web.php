@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('cleanBlocHome');
+});
+
+Route::get('/about', function () {
+    return view('cleanBlocAbout');
+});
+
+Route::get('/post', function () {
+    return view('cleanBlocPost');
+});
+
+Route::get('/contact', function () {
+    return view('cleanBlocContact');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
